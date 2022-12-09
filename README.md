@@ -29,6 +29,44 @@ Alice: Definitely. It's always important to carefully analyze the results of an 
 Bob: Agreed. Let's talk to the team and figure out our next steps.
 ```
 
+```
+Write a Python Airflow job that counts how many users our chat app has
+
+Assuming that our chat app is storing user data in a database, the following is an example of a Python Airflow job that counts the number of users in the app:
+
+``` python
+import airflow
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+
+def count_users():
+    # Connect to the database
+    conn = psycopg2.connect(DATABASE_URL)
+    cursor = conn.cursor()
+    
+    # Execute the SQL query to count the number of users
+    cursor.execute("SELECT COUNT(*) FROM users")
+    user_count = cursor.fetchone()
+    
+    # Print the result
+    print("Number of users in the chat app: ", user_count)
+
+dag = DAG(
+    "count_users_dag",
+    schedule_interval="0 0 * * *"
+)
+
+count_users_task = PythonOperator(
+    task_id="count_users",
+    python_callable=count_users,
+    dag=dag
+)
+```
+
+In this example, the DAG (directed acyclic graph) is scheduled to run every day at midnight. The count_users function connects to the database, executes the SQL query to count the number of users, and prints the result. The PythonOperator is used to run the count_users function as a task in the Airflow DAG.
+
+```
+
 ### GPT answers
 | Question  | Source | ChatGPT |
 |:----------|:------:|:--------|
