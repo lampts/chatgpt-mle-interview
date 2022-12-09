@@ -7,6 +7,28 @@ Most of interview questions are fetched from
 * 🐥 [HuyenChip's Book](https://huyenchip.com/ml-interviews-book/)
 * 🕵️‍♀️ [Website](https://www.interviewbit.com/data-science-interview-questions)
 
+### Full flow demo
+
+```
+1. Explain the results of an A/B test that has gone bad like a dialogue between Alice and Bob
+
+Alice: Hey Bob, have you seen the results of the A/B test we ran on our website?
+
+Bob: No, I haven't. What happened?
+
+Alice: It looks like the changes we made in the B version actually decreased the number of conversions.
+
+Bob: Oh no, that's not good. Did we make any major changes in the B version that could have caused that?
+
+Alice: Yes, we changed the color of the call-to-action button and moved it to the top of the page.
+
+Bob: I see. Well, it looks like those changes didn't work out as we expected. We'll need to go back to the drawing board and come up with a new plan.
+
+Alice: Definitely. It's always important to carefully analyze the results of an A/B test and make sure the changes we're making are actually improving the user experience.
+
+Bob: Agreed. Let's talk to the team and figure out our next steps.
+```
+
 ### GPT answers
 | Question  | Source | ChatGPT |
 |:----------|:------:|:--------|
