@@ -9,9 +9,9 @@ Most of interview questions are fetched from
 
 ### Full flow demo
 
-```
-1. Explain the results of an A/B test that has gone bad like a dialogue between Alice and Bob
+> Explain the results of an A/B test that has gone bad like a dialogue between Alice and Bob
 
+```
 Alice: Hey Bob, have you seen the results of the A/B test we ran on our website?
 
 Bob: No, I haven't. What happened?
@@ -29,9 +29,8 @@ Alice: Definitely. It's always important to carefully analyze the results of an 
 Bob: Agreed. Let's talk to the team and figure out our next steps.
 ```
 
-```
-Write a Python Airflow job that counts how many users our chat app has
-
+> Write a Python Airflow job that counts how many users our chat app has
+ 
 Assuming that our chat app is storing user data in a database, the following is an example of a Python Airflow job that counts the number of users in the app:
 
 ``` python
@@ -65,7 +64,7 @@ count_users_task = PythonOperator(
 
 In this example, the DAG (directed acyclic graph) is scheduled to run every day at midnight. The count_users function connects to the database, executes the SQL query to count the number of users, and prints the result. The PythonOperator is used to run the count_users function as a task in the Airflow DAG.
 
-```
+
 
 ### GPT answers
 | Question  | Source | ChatGPT |
