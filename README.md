@@ -64,6 +64,95 @@ count_users_task = PythonOperator(
 
 In this example, the DAG (directed acyclic graph) is scheduled to run every day at midnight. The count_users function connects to the database, executes the SQL query to count the number of users, and prints the result. The PythonOperator is used to run the count_users function as a task in the Airflow DAG.
 
+> What are all the steps of a recommender system
+
+```
+A recommender system typically consists of the following steps:
+
+Data collection: The first step is to collect data on users' preferences, behavior, and interactions with the system. This data is used to train the recommender system.
+
+Data preprocessing: The collected data is cleaned, transformed, and prepared for training the recommender system. This step typically involves removing missing or irrelevant data, normalizing data, and transforming it into a suitable format for training.
+
+Model training: Once the data has been preprocessed, it is used to train a machine learning model that can make recommendations. This step involves selecting a suitable algorithm, such as collaborative filtering or matrix factorization, and optimizing its hyperparameters to achieve the best performance.
+
+Model evaluation: After training the model, it is important to evaluate its performance to ensure that it is making accurate and useful recommendations. This step typically involves splitting the preprocessed data into training and test sets, and using the test set to evaluate the model's performance using metrics such as precision and recall.
+
+Model deployment: Once the model has been trained and evaluated, it is ready to be deployed in the recommender system. This step involves integrating the trained model into the system, so that it can make recommendations to users in real-time.
+
+Continuous improvement: Even after deployment, the recommender system should be regularly monitored and updated to improve its performance. This can involve collecting new data, retraining the model, and making changes to the system to optimize its performance.
+
+```
+
+> Explain embeddings to me like I am five year old
+
+```
+Imagine that you have a bunch of stuffed animals, and you want to give each of them a name. You can write each animal's name on a piece of paper and stick it to the animal, so you know which name belongs to which animal. This is like an "embedding" in a computer.
+
+In a computer, an "embedding" is a way of giving a name (or a number) to something, so that the computer can understand and work with it. For example, let's say you want to teach a computer to recognize different animals in a picture. You can show the computer lots of pictures of animals, and for each picture, you can tell the computer the name of the animal in the picture. This way, the computer will learn which numbers (or "embeddings") belong to which animals.
+
+When the computer sees a new picture of an animal, it can look at the numbers (or "embeddings") it has learned, and try to figure out which animal is in the picture. It does this by finding the numbers that are most similar to the numbers in the new picture, and guessing that the animal in the new picture is the same as the animals it has seen before with similar numbers.
+
+In short, "embeddings" are like names or labels for things that a computer can understand and use to make predictions or decisions.
+```
+
+> Explain cosine similarity to me like we are sitting on the beach on vacation but keep getting interrupted by a waiter bringing us sangria
+
+```
+Sure, imagine that we're sitting on the beach, enjoying the sun and the waves. We have a big pitcher of sangria on the table in front of us, and every now and then, the waiter comes by to refill our glasses.
+
+Now, let's say that you and I both have a list of our favorite things to do on the beach: yours might include swimming, building sandcastles, and playing beach volleyball, while mine might include reading, sunbathing, and collecting seashells.
+
+To compare our lists of favorite things, we can use something called "cosine similarity." This is a way of measuring how similar two lists are to each other. It works by looking at the angle between the two lists.
+
+Imagine that each of our lists is like a line drawn in the sand. If the lines are pointing in the same direction (that is, if they have the same angle), that means that our lists are very similar – we both like to do the same things on the beach. But if the lines are pointing in different directions (that is, if they have different angles), that means that our lists are not very similar – we like to do different things on the beach.
+
+To calculate the cosine similarity between our lists, we first need to draw the lines in the sand. Then, we measure the angle between the lines. The smaller the angle, the more similar our lists are, and the larger the angle, the less similar our lists are.
+
+And that's it! Cosine similarity is a way of measuring how similar two lists are by looking at the angle between them. It's a bit like trying to compare our lists of favorite beach activities, while the waiter keeps interrupting us with more sangria.
+```
+
+> Implement a feature store using only pure Python
+
+Here is an example implementation of a feature store using only pure Python:
+
+``` python
+class FeatureStore:
+    def __init__(self):
+        self.features = {}
+    
+    def add_feature(self, feature_name, data):
+        self.features[feature_name] = data
+    
+    def get_feature(self, feature_name):
+        return self.features.get(feature_name)
+    
+    def list_features(self):
+        return list(self.features.keys())
+
+# Example usage
+
+feature_store = FeatureStore()
+
+# Add a new feature to the store
+feature_store.add_feature("user_age", [23, 45, 67, 34, 29])
+
+# Get a feature from the store
+age_data = feature_store.get_feature("user_age")
+print(age_data)  # [23, 45, 67, 34, 29]
+
+# List all features in the store
+all_features = feature_store.list_features()
+print(all_features)  # ["user_age"]
+
+```
+In this implementation, the `FeatureStore` class has three methods:
+
+`add_feature`: This method adds a new feature to the store. It takes the name of the feature and the data as arguments, and stores the data in a dictionary under the given feature name.
+
+`get_feature`: This method retrieves a feature from the store. It takes the name of the feature as an argument, and returns the data associated with that feature.
+
+`list_features`: This method returns a list of all the features in the store.
+The FeatureStore class can be used to store and retrieve any type of data, as long as it can be represented as a Python object (such as a list or a dictionary).
 
 
 ### GPT answers
